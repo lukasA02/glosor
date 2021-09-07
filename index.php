@@ -19,7 +19,9 @@ $totalscore = 0;
 $tagna = array();
 
 //skapar associativ array med alla glosor
-$glosorassoc = array("Hej"=>"Hello", "God Morgon"=>"Good Morning", "Vem är du?"=>"Who are you?", "Godnatt" => "Good night");
+$glosorassoc = array("Hej"=>"Hello", "God Morgon"=>"Good Morning", "Vem är du?"=>"Who are you?",
+"Godnatt"=>"Good night", "Hund"=>"Dog", "Katt"=>"Cat", "Mat"=>"Food", "Dator"=>"Computer", "Bil"=>"Car", "Cykel"=>"Bike", "Skola"=>"School", "Och"=>"And", 
+"Nu"=>"Now", "Honom"=>"Him", "Henne"=>"Her", "Mellan"=>"Between");
 
 //om tagna finns i sessionen ska arrayen sättas till det som sparades
 if (isset($_SESSION["tagna"])) {
