@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(217, 227, 230);  
+}
+
+.header{
+    background-image: linear-gradient(rgb(27, 152, 158), rgb(19, 87, 92));
+    color: rgb(255, 243, 234);
+    box-shadow: 6px 9px 12px 0px rgba(66, 66, 66, 0.733);
+    height: 18vh;
+    font-family: 'Rampart One', cursive;
+}
+
+.titel{
+    font-size: 2.5vw;
+    margin-left: 2vw;
+    margin-top: 2vw;
+    position: absolute;
+}
+
+.testing{
+    width: 40vw;
+    height: 70vh;
+    background-color: rgb(250, 227, 208);
+    border: 5px dotted rgb(99, 61, 25);
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.svara{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5vw;
+    margin-top: 2vh;
+    margin-left: 1vw;
+}
