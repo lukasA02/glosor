@@ -1,0 +1,2 @@
+# glosor
+mina glosor
