@@ -26,6 +26,7 @@ $glosorassoc = array("Hej"=>"Hello", "God Morgon"=>"Good Morning", "Vem är du?"
 //om tagna finns i sessionen ska arrayen sättas till det som sparades
 if (isset($_SESSION["tagna"])) {
 
+    //ta bort kommentaren från nästa rad för att cleara session. lägg till den igen efteråt
     //$_SESSION["tagna"] = [];
     $tagna = $_SESSION["tagna"];
 
@@ -33,7 +34,9 @@ if (isset($_SESSION["tagna"])) {
 
 //samma som för tagna men för glosoassoc
 if (isset($_SESSION["glosorassoc"])) {
-
+    
+    //ta bort kommentaren från nästa rad för att cleara session. lägg till den igen efteråt
+    //$_SESSION["glosorassoc"] =[];
     $glosorassoc = $_SESSION["glosorassoc"];
 
 }
