@@ -130,7 +130,7 @@ $_SESSION['tagna'] = $tagna;
 <br><br><br><br>
 
 <form action="clearsess.php" method="POST">
-    <input type="submit" value="Clear session" />
+    <input type="submit" value="Rensa sessions" />
 </form>
 
 </body>
