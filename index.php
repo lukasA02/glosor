@@ -127,5 +127,11 @@ $_SESSION['tagna'] = $tagna;
 
 </div>
 
+<br><br><br><br>
+
+<form action="clearsess.php" method="POST">
+    <input type="submit" value="Clear session" />
+</form>
+
 </body>
 </html>
