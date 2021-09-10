@@ -5,6 +5,7 @@
 
 body{
     background-color: rgb(217, 227, 230);  
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .header{
@@ -20,6 +21,7 @@ body{
     margin-left: 2vw;
     margin-top: 2vw;
     position: absolute;
+    color: white;
 }
 
 .testing{
@@ -37,4 +39,36 @@ body{
     font-size: 1.5vw;
     margin-top: 2vh;
     margin-left: 1vw;
+}
+
+
+.glosor{
+    position: relative;
+    margin-left: 30vw;
+    margin-top: -55vh;
+    font-size: 1.5vw;
+    text-align: center;
+    max-width: 40vw;
+}
+
+.rensa{
+    font-size: 1vw;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.back{
+    font-size: 1vw;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    border-radius: 5px;
+}
+
+
+.ord{
+    font-size: 1vw;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
 }
