@@ -28,17 +28,25 @@ session_start();
 //sätter variablerna för glosan man fick och svaret
 $score = 0;
 $tagna = array();
+$glosorassoc = array();
 
-//skapar associativ array med alla glosor
-$glosorassoc = array("Hej"=>"Hello", "God Morgon"=>"Good Morning", "Vem är du?"=>"Who are you?",
-"Godnatt"=>"Good night", "Hund"=>"Dog", "Katt"=>"Cat", "Mat"=>"Food", "Dator"=>"Computer", "Bil"=>"Car", "Cykel"=>"Bike", "Skola"=>"School", "Och"=>"And", 
-"Nu"=>"Now", "Honom"=>"Him", "Henne"=>"Her", "Mellan"=>"Between");
+
+    if (!isset ($_SESSION["glosorassoc"])){
+        foreach (file("glosor.txt") as $rad){
+            $data=explode(",",$rad);
+            $glosorassoc[trim($data[0])]=trim($data[1]);
+        }
+        var_dump($glosorassoc);
+    }
+
+
+ 
+
 
 //om tagna finns i sessionen ska arrayen sättas till det som sparades
 if (isset($_SESSION["tagna"])) {
 
     //ta bort kommentaren från nästa rad för att cleara session. lägg till den igen efteråt
-    //$_SESSION["tagna"] = [];
     $tagna = $_SESSION["tagna"];
 
 }
@@ -47,7 +55,6 @@ if (isset($_SESSION["tagna"])) {
 if (isset($_SESSION["glosorassoc"])) {
     
     //ta bort kommentaren från nästa rad för att cleara session. lägg till den igen efteråt
-    //$_SESSION["glosorassoc"] =[];
     $glosorassoc = $_SESSION["glosorassoc"];
 
 }
@@ -67,9 +74,10 @@ if (isset($_GET["glosa"]) && isset($_GET["previousdin"])) {
 }
 
     $previousdin = $_GET["previousdin"];
+    $correct = $_GET["dinglosa"];
 
-    if ($glosorassoc["$glosa"] == "$previousdin"){
-        echo "<br> DIN GLOSA VAR: ". $previousdin . "<br> DU SVARADE: " . $glosa . "<br>";
+    if ($glosa == $previousdin){
+        echo "<br> DIN GLOSA VAR: ". $correct . "<br> DU SVARADE: " . $glosa . "<br>";
         $score++;
         echo "Poäng: " . $score . "<br>";
     }
@@ -80,29 +88,29 @@ if (isset($_GET["glosa"]) && isset($_GET["previousdin"])) {
 if (isset($_GET["previousdin"])) {
 
     $previousdin = $_GET["previousdin"];
-    //echo $previousdin;
-    array_push($tagna, $previousdin);
+    var_dump($glosorassoc);
+
 
     //tar bort det man gissade på från glosorassoc
     unset($glosorassoc["$glosa"]);
-    
-    //skriv ut array med vilka ord man tagit. Dessa ska tas bort från möjliga glosor.
-    /*echo "<br>TAGNA " .json_encode($tagna). "<br><br>";*/
 
 }
-
 
 
 //skriver ut glosan som man ska svara på om arrayen inte är tom
 if (!empty($glosorassoc)) {
     $dinglosavarde = array_rand($glosorassoc);
     $dinglosa = $glosorassoc[$dinglosavarde];
-    echo "Vad blir " . '"'. $dinglosa. '"' . " på svenska? <br><br>";
+    echo "Vad blir " . '"'. $dinglosa .'"' . " på svenska? <br><br>";
+    array_push($tagna, $dinglosa);
+    $_SESSION["tagna"] = $tagna;
+
+
 }
 else echo ("Du genomförde testet, bra jobbat!");
 
 $_SESSION['glosorassoc'] = $glosorassoc;
-$_SESSION['tagna'] = $tagna;
+//$_SESSION['tagna'] = $tagna;
 
 ?>
 
@@ -115,18 +123,27 @@ $_SESSION['tagna'] = $tagna;
         <?php
 
             //skriver ut de alternativen man har att välja mellan
-            foreach($glosorassoc as $x => $x_value) {
-
-                echo "<option value='".$x."'>".$x."</option>"; 
+            foreach($glosorassoc as $key => $value) {
+       
+                $klar = true;
+                foreach ($tagna as $t){
+                 
+                }
+                if($klar);
+                echo "<option value='".$key."'>" . $key ."</option>\n"; 
 
             }
+            echo "</select>";
+            var_dump ($glosorassoc);
+          
         
         ?>
 
     </select>
 
     <!--en gömd input skapas för att kunna skicka med vad det var man svarade på-->
-    <input class="ord" type="hidden" value="<?php echo $dinglosa;?>" name="previousdin">
+    <input class="ord" type="hidden" value="<?php echo $dinglosa[0];?>" name="previousdin">
+    <input class="ord" type="hidden" value="<?php echo $dinglosa[1];?>" name="dinglosa">
     <input class="ord" type="hidden" value="<?php echo $score;?>" name="score">
 
     <input class="ord" type='submit' value='skicka'>
