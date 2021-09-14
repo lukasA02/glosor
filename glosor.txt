@@ -1,3 +1,16 @@
 Hej,Hello
 God Morgon,Good Morning
-Vem är du,Who are you?
+Vem är du?,Who are you?
+Godnatt,Good night
+Hund,Dog
+Katt,Cat
+Mat,Food
+Dator,Computer
+Bil,Car
+Cykel,Bike
+Skola,School
+Och,And 
+Nu,Now
+Honom,Him
+Henne,Her
+Mellan,Between
