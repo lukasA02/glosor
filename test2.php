@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+
+
+
 </head>
 <body>
     <div class="header">
@@ -36,11 +39,8 @@ $glosorassoc = array();
             $data=explode(",",$rad);
             $glosorassoc[trim($data[0])]=trim($data[1]);
         }
-        var_dump($glosorassoc);
+        
     }
-
-
- 
 
 
 //om tagna finns i sessionen ska arrayen sättas till det som sparades
@@ -61,13 +61,12 @@ if (isset($_SESSION["glosorassoc"])) {
 
 if (isset($_GET["glosa"])){
     $glosa = $_GET["glosa"];
-    //echo $glosa;
 }
 
 
 //om man skickat en getrequest ska man få reda på om man svarat rätt eller fel
 if (isset($_GET["glosa"]) && isset($_GET["previousdin"])) {
-
+    
     //hämtar poängen
     if (isset($_GET["score"])) {
     $score = $_GET["score"];
@@ -75,21 +74,24 @@ if (isset($_GET["glosa"]) && isset($_GET["previousdin"])) {
 
     $previousdin = $_GET["previousdin"];
     $correct = $_GET["dinglosa"];
+    $dinglosa = $_GET["glosa"];
 
-    if ($glosa == $previousdin){
-        echo "<br> DIN GLOSA VAR: ". $correct . "<br> DU SVARADE: " . $glosa . "<br>";
+
+    if ($dinglosa == $correct){
+        echo "<br> DIN GLOSA VAR: ". $previousdin . "<br> DU SVARADE: " . $dinglosa . "<br>";
         $score++;
         echo "Poäng: " . $score . "<br>";
     }
-    else echo "<br>Du fick fel lmao<br>" . "Poäng:" . $score . "<br>" ;
-
+    else echo "<br>Du fick fel lmao<br>" .  "Poäng:" . $score . "<br>";
+    
 }
+
 
 if (isset($_GET["previousdin"])) {
 
     $previousdin = $_GET["previousdin"];
-    var_dump($glosorassoc);
-
+    
+    
 
     //tar bort det man gissade på från glosorassoc
     unset($glosorassoc["$glosa"]);
@@ -102,15 +104,15 @@ if (!empty($glosorassoc)) {
     $dinglosavarde = array_rand($glosorassoc);
     $dinglosa = $glosorassoc[$dinglosavarde];
     echo "Vad blir " . '"'. $dinglosa .'"' . " på svenska? <br><br>";
+
+    $glosa = array_search($dinglosa, $glosorassoc);
     array_push($tagna, $dinglosa);
     $_SESSION["tagna"] = $tagna;
-
-
 }
 else echo ("Du genomförde testet, bra jobbat!");
 
 $_SESSION['glosorassoc'] = $glosorassoc;
-//$_SESSION['tagna'] = $tagna;
+
 
 ?>
 
@@ -133,17 +135,17 @@ $_SESSION['glosorassoc'] = $glosorassoc;
                 echo "<option value='".$key."'>" . $key ."</option>\n"; 
 
             }
-            echo "</select>";
-            var_dump ($glosorassoc);
+            
+            
           
         
         ?>
 
     </select>
 
-    <!--en gömd input skapas för att kunna skicka med vad det var man svarade på-->
-    <input class="ord" type="hidden" value="<?php echo $dinglosa[0];?>" name="previousdin">
-    <input class="ord" type="hidden" value="<?php echo $dinglosa[1];?>" name="dinglosa">
+    <!--en gömd input skapas för att kunna skicka med vad det var man svarade på ?-->
+    <input class="ord" type="hidden" value="<?php echo $dinglosa;?>" name="previousdin">
+    <input class="ord" id="svenska" type="hidden" value="<?php echo $glosa;?>" name="dinglosa">
     <input class="ord" type="hidden" value="<?php echo $score;?>" name="score">
 
     <input class="ord" type='submit' value='skicka'>
@@ -165,6 +167,7 @@ $_SESSION['glosorassoc'] = $glosorassoc;
 
 </div>
 
+<div class="foot"></div>
        
 
 </body>
