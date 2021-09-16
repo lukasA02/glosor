@@ -41,6 +41,12 @@ body{
     margin-left: 1vw;
 }
 
+.komihåg{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1vw;
+    margin-left: 1.5vw;
+}
+
 
 .glosor{
     position: relative;

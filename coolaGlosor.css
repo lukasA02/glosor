@@ -1,0 +1,127 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(217, 227, 230);  
+}
+
+.rubrik{
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.header{
+    background-image: linear-gradient(rgb(27, 152, 158), rgb(19, 87, 92));
+    color: rgb(255, 243, 234);
+    /*border: 8px dotted rgb(212, 223, 215);*/
+    box-shadow: 6px 9px 12px 0px rgba(66, 66, 66, 0.733);
+    height: 18vh;
+   
+}
+.valkommen{
+    font-family: 'Rampart One', cursive;
+    margin-top: 5vh;
+    position: absolute;
+    margin-left: 27vw;
+    font-size: 3vw;
+    
+}
+.penna{
+    margin-left: 70vw;
+    margin-top: -16vh;
+    position: absolute;
+}
+
+.penna1{
+    width: 8vw;   
+    margin-left: 8vw;
+}
+
+.penna2{
+    width: 8vw;
+    transform: rotateY(200deg);
+    margin-left: -70vw;
+}
+
+
+.container0{
+    background-color: rgb(19, 87, 92);
+    height: 30vh;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 9px 5px rgba(71, 71, 71, 0.747);
+    margin-top: 15vh;
+    border: 8px dotted rgb(204, 110, 3);
+}
+
+
+
+.redo{
+    font-family: 'Rampart One', cursive;
+    text-align: center;
+    padding-top: 3vh;
+    font-size: 4vw;
+    color: rgb(255, 243, 234);
+}
+
+/*.container2{
+    border: 1px solid black;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    background-color: rgb(0, 81, 87);
+    text-align: center;
+    box-shadow: 6px 9px 12px 0px rgba(0,0,0,0.7);
+}*/
+
+/*.container2:hover{
+    background-color: antiquewhite;
+    color: black;
+}*/
+
+.kor{
+    font-size: 3vw;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: rgb(255, 243, 234);
+    background-color: rgb(221, 151, 0);
+    box-shadow: 6px 9px 12px 0px rgba(0,0,0,0.7);
+    margin-left: 15vw;
+    margin-top: 10vh;
+    width: 20vw;
+}
+
+.kor:hover{
+    text-decoration: none;
+    background-color: rgb(20, 148, 9);
+    color: black;
+}
+
+/*.glosor{
+    margin-left: 29vw;
+    margin-top: 5vh; 
+    width: 800px;
+    border: 2px solid black;
+    box-shadow: 6px 9px 12px 0px rgba(0,0,0,0.7);
+    position: absolute;
+}*/
+
+footer{
+    text-align: center;
+    background-image: linear-gradient(rgb(33, 121, 128), rgb(21, 90, 95));
+    height: 10vh;
+    margin-top: 27vh;
+    position: relative;
+    display: block;
+    
+}
+
+.skapat{
+    color: white;
+    padding-top: 5vh;
+}
