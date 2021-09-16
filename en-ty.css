@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(217, 227, 230);
+} 
+    
+
+.engelska{
+    margin-left: 30vw;
+    margin-top: 45vh;
+    position: absolute;
+    font-size: 1.5vw;
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+
+.tyska{
+    margin-left: 60vw;
+    margin-top: 45vh;
+    position: absolute;
+    font-size: 1.5vw;
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+
+.engelska:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+.tyska:hover{
+    text-decoration: underline;
+    color: black;
+}
+.vilket{
+    margin-top: 30vh;
+    position: absolute;
+    font-size: 2vw;
+    margin-left: 32vw;
+}
+
+.tillbaka{
+    font-size: 1.2vw;
+    margin-top: 2vh;
+    margin-left: 2vw;
+    color: black;
+    position: absolute;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.tillbaka:hover{
+    text-decoration: underline;
+}
